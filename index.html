@@ -1,15 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ウオオオオオオオオオオ</title>
+    <title>簡素自動生成</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
+    <style>
+        /* .generate {
+            display: none;
+        }
+
+        .form {
+            display: none;
+        } */
+
+        #form {
+            text-align: center;
+        }
+
+        #generate {
+            color: aliceblue;
+        }
+
+        #ramdomJ {
+            float: left;
+            color: rosybrown;
+        }
+
+        #ramdomJ {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+        }
+
+        /* #header {
+            height: 150px;
+        } */
+
+        /* #main {
+            height: 600px;
+        }
+
+        #footer {
+            height: 50px;
+        } */
+    </style>
 </head>
 
 <body>
-    <h1>自動生成でぇーーーす</h1>
-    <p>jidouseisei</p>
+    <div id="ramdomJ">
+        <script src="ramdom1.js"></script>
+    </div>
+    <div id="generate" class="generate">
+        <div id="header" class="hmf-bc-r hmf-pa-s">ヘッダー要素
+
+            <div id="marginG">
+                <h1 id="output_message" class="margin-m-s marginG">見出し</h1>
+            </div>
+            <div id="marginG">
+                <div id="form_result" class="margin-m-s">フォーム結果</div>
+            </div>
+            <div id="marginG">
+                <p id="" class="pE1 margin-m-s">ｐ要素</p>
+            </div>
+            <div id="marginG">
+                <p id="siteNameG" class="margin-m-s">サイト名出力</p>
+            </div>
+        </div>
+        <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素
+            <div id="marginG">
+                <div id="" class="mainE1 margin-m-s">メイン子要素</div>
+            </div>
+
+        </div>
+        <div id="footer" class="hmf-bc-r hmf-pa-s">フッター要素
+            <div id="marginG">
+                <p id="" class="margin-m-s">フッター子要素</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- requiredは一旦保留 -->
+    <div class="input">
+        ＊入力されなかった場合、適当な言葉が入力されます。
+        <form action="" method="" id="form">
+            <ul>
+
+                <li>
+                    <label for="color">site background color</label><br>
+                    <select id="selectBg" name="mainColor">
+                        <option value="red" selected>赤系</option>
+                        <option value="green">緑系</option>
+                        <option value="blue">青系</option>
+                    </select>
+                    <!-- 赤系＝コカ・コーラ、ホンダ、ポッキー -->
+                </li>
+                <li>
+                    <label for="mysite">site name(0~20)</label><br>
+                    <input id="siteName" type="text" maxlength="20" placeholder="サイト名を入力" name="siteName" required>
+                </li>
+                <li>
+                    <label for="margin">margin</label><br>
+                    <select id="selectMargin" name="margin">
+                        <option value="1">小さめ</option>
+                        <option value="2">中くらい</option>
+                        <option value="3">大きめ</option>
+                    </select>
+                </li>
+                <li>
+                    <label for="">text-align</label><br>
+                    <select id="textAlign" name="textAlign">
+                        <option value="">start</option>
+                        <option value="">right</option>
+                        <option value="">left</option>
+                        <option value="">center</option>
+                    </select>
+                </li>
+                <li>
+                    <input type="button" value="生成！" onClick="btnClick(this)">
+                </li>
+                <li>
+                    <input type="reset" name="bt01" value="入力内容を初期化">
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <script>
+        //ベース
+        const _header = document.getElementById('header');
+        const _main = document.getElementById('main');
+        const _footer = document.getElementById('footer');
+        const _HMF = document.querySelectorAll("#header,#main,#footer")
+        //色
+        const _selectBg = document.getElementById('selectBg');
+        //サイト名
+        const _siteName = document.getElementById('siteName');
+
+        const _form = document.getElementById('form');
+        const _generate = document.getElementById('generate');
+        //margin
+        const _selectMargin = document.getElementById('selectMargin');
+        const _marginG = _generate.querySelectorAll("#marginG");
+        // const _marginG2 = document.getElementById('marginG2');
+
+        //色
+        _selectBg.addEventListener("change", function () {
+            let _color1 = _selectBg.value;
+            for (let i = 0; i < _HMF.length; i++) {
+                let _elementC = _HMF[i];
+                if (_color1 === 'red') {
+                    _elementC.classList.remove('hmf-bc-g');
+                    _elementC.classList.remove('hmf-bc-b');
+                    _elementC.classList.add('hmf-bc-r');
+                } else if (_color1 === 'green') {
+                    _elementC.classList.remove('hmf-bc-r');
+                    _elementC.classList.remove('hmf-bc-b');
+                    _elementC.classList.add('hmf-bc-g');
+                } else if (_color1 === 'blue') {
+                    _elementC.classList.remove('hmf-bc-r');
+                    _elementC.classList.remove('hmf-bc-g');
+                    _elementC.classList.add('hmf-bc-b');
+                };
+            };
+        });
+
+        //サイト名
+        _siteName.addEventListener("input", function () {
+            let _sN = document.getElementById("siteName").value;
+            _sNG = _sN;
+            document.getElementById("siteNameG").innerHTML = _sNG;
+        });
+
+        //マージン
+        _selectMargin.addEventListener("change", function () {
+            let _sMV = _selectMargin.value;
+            for (let i = 0; i < _marginG.length; i++) {
+                let _elementM = _marginG[i];
+                if (_sMV === '1') {
+                    _elementM.classList.remove('margin-m-b');
+                    _elementM.classList.remove('margin-m-m');
+                    _elementM.classList.add('margin-m-s');
+                } else if (_sMV === '2') {
+                    _elementM.classList.remove('margin-m-b');
+                    _elementM.classList.remove('margin-m-s');
+                    _elementM.classList.add('margin-m-m');
+                } else if (_sMV === '3') {
+                    _elementM.classList.remove('margin-m-m');
+                    _elementM.classList.remove('margin-m-s');
+                    _elementM.classList.add('margin-m-b');
+                };
+            }
+
+        });
+
+        //一括送信
+        function send() {
+            _form.classList.add('form');
+            _generate.classList.remove('generate');
+            _generate.classList.add('generate-b');
+            //サイト名０文字のときの処理
+
+        };
+
+        function btnClick(obj) {
+            alert(obj.value);
+        }
+
+        //エンターキー誤爆対策
+        document.getElementById("form").onkeypress = (e) => {
+            const key = e.keyCode || e.charCode || 0;
+            if (key == 13) {
+                e.preventDefault();
+            }
+        }
+
+    </script>
 </body>
 
 </html>
