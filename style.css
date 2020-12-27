@@ -24,8 +24,8 @@ form ul li{
     margin: auto;
 }
 
-li:nth-child(odd) {
-  color: #285437;
+li{
+    border: 1px dotted #2833bc;
 }
 
 /*headermainfooterの背景色*/
