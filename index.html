@@ -9,13 +9,13 @@
 
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
     <style>
-        /* .generate {
+        .generate {
             display: none;
         }
 
         .form {
             display: none;
-        } */
+        }
 
         #form {
             text-align: center;
@@ -40,13 +40,13 @@
             height: 150px;
         } */
 
-        /* #main {
+        #main {
             height: 600px;
         }
 
         #footer {
             height: 50px;
-        } */
+        }
     </style>
 </head>
 
@@ -58,16 +58,13 @@
         <div id="header" class="hmf-bc-r hmf-pa-s">ヘッダー要素
 
             <div id="marginG">
-                <h1 id="output_message" class="margin-m-s marginG">見出し</h1>
+                <h1 id="siteNameG" class="margin-m-s marginG">見出し</h1>
             </div>
             <div id="marginG">
                 <div id="form_result" class="margin-m-s">フォーム結果</div>
             </div>
             <div id="marginG">
                 <p id="" class="pE1 margin-m-s">ｐ要素</p>
-            </div>
-            <div id="marginG">
-                <p id="siteNameG" class="margin-m-s">サイト名出力</p>
             </div>
         </div>
         <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素
@@ -86,8 +83,9 @@
 
     <!-- requiredは一旦保留 -->
     <div class="input">
-        ＊入力されなかった場合、適当な言葉が入力されます。
+
         <form action="" method="" id="form">
+            ＊「site name」が空白の場合、適当な言葉が入力されます。
             <ul>
 
                 <li>
@@ -101,7 +99,7 @@
                 </li>
                 <li>
                     <label for="mysite">site name(0~20)</label><br>
-                    <input id="siteName" type="text" maxlength="20" placeholder="サイト名を入力" name="siteName" required>
+                    <input id="siteName" type="text" maxlength="20" placeholder="サイト名を入力" name="siteName">
                 </li>
                 <li>
                     <label for="margin">margin</label><br>
@@ -119,6 +117,39 @@
                         <option value="">left</option>
                         <option value="">center</option>
                     </select>
+                </li>
+                <li>
+                    <div class="hidden_box">
+                        <label for="label1">＋ヘッダー部分</label>
+                        <input type="checkbox" id="label1" />
+                        <div class="hidden_show">
+                            <select id="checkSlide" name="checkBox">
+                                <option value="1">スライド</option>
+                                <option value="2">フェードイン</option>
+                                <option value="3">ユニーク</option>
+                            </select>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="hidden_box">
+                        <label for="label2">＋メイン部分</label>
+                        <input type="checkbox" id="label2" />
+                        <div class="hidden_show">
+                            <select id="checkSide" name="checkBox">
+                                <input type="radio" name="s1" value="yes">はい
+                                <input type="radio" name="s1" value="no">いいえ
+                            </select>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="hidden_box">
+                        <label for="label3">＋フッター部分</label>
+                        <input type="checkbox" id="label3" />
+                        <div class="hidden_show">
+                        </div>
+                    </div>
                 </li>
                 <li>
                     <input type="button" value="生成！" onClick="btnClick(this)">
@@ -172,9 +203,10 @@
         //サイト名
         _siteName.addEventListener("input", function () {
             let _sN = document.getElementById("siteName").value;
-            _sNG = _sN;
-            document.getElementById("siteNameG").innerHTML = _sNG;
+            document.getElementById("siteNameG").innerHTML = _sN;
         });
+
+
 
         //マージン
         _selectMargin.addEventListener("change", function () {
@@ -199,19 +231,27 @@
         });
 
         //一括送信
-        function send() {
+        // function send() {
+
+
+        // };
+
+
+        function btnClick(obj) {
+            // alert(obj.value);
             _form.classList.add('form');
             _generate.classList.remove('generate');
             _generate.classList.add('generate-b');
             //サイト名０文字のときの処理
-
-        };
-
-        function btnClick(obj) {
-            alert(obj.value);
+            if (_siteName.value === '') {
+                document.getElementById("siteNameG").innerHTML = '適当なサイト名';
+            };
         }
+        // !_sN.value || !_sN.value.match(/\S/g)
 
-        //エンターキー誤爆対策
+
+
+        //エンターキー誤送対策
         document.getElementById("form").onkeypress = (e) => {
             const key = e.keyCode || e.charCode || 0;
             if (key == 13) {
