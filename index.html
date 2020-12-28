@@ -9,13 +9,13 @@
 
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
     <style>
-        .generate {
+        /* .generate {
             display: none;
         }
 
         .form {
             display: none;
-        }
+        } */
 
         #form {
             text-align: center;
@@ -36,9 +36,9 @@
             top: 0;
         }
 
-        #main {
+        /* #main {
             height: 600px;
-        }
+        }*/
     </style>
 </head>
 
@@ -52,22 +52,21 @@
             <div id="marginG">
                 <h1 id="siteNameG" class="margin-m-s marginG">見出し</h1>
             </div>
-            <div id="marginG">
+            <!-- <div id="marginG">
                 <div id="form_result" class="margin-m-s">フォーム結果</div>
-            </div>
+            </div> -->
             <div id="marginG">
-                <p id="" class="pE1 margin-m-s">ｐ要素</p>
+                <p id="" class="pE1 margin-m-s">ヘッダー子要素</p>
             </div>
         </div>
         <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素
             <div id="marginG">
                 <div id="" class="mainE1 margin-m-s">メイン子要素</div>
             </div>
-
         </div>
         <div id="footer" class="hmf-bc-r hmf-pa-s">フッター要素
             <div id="marginG">
-                <p id="" class="margin-m-s hmf-pa-s">フッター子要素</p>
+                <p id="" class="margin-m-s">フッター子要素</p>
             </div>
         </div>
     </div>
@@ -76,7 +75,7 @@
     <!-- requiredは一旦保留 -->
     <div class="input">
 
-        <form action="" method="" id="form">
+        <form id="form">
             ＊「site name」が空白の場合、適当な言葉が入力されます。
             <ul>
 
@@ -128,10 +127,12 @@
                         <label for="label2">＋メイン部分</label>
                         <input type="checkbox" id="label2" />
                         <div class="hidden_show">
-                            <select id="checkSide" name="checkBox">
-                                <input type="radio" name="s1" value="yes">はい
-                                <input type="radio" name="s1" value="no">いいえ
-                            </select>
+                            <form id="hidden">
+                                <select id="checkSide" name="checkBox">
+                                    <input type="radio" name="s1" value="yes">はい
+                                    <input type="radio" name="s1" value="no">いいえ
+                                </select>
+                            </form>
                         </div>
                     </div>
                 </li>
@@ -144,7 +145,7 @@
                     </div>
                 </li>
                 <li>
-                    <input type="button" value="生成！" onClick="btnClick(this)">
+                    <input class="generateBtn" type="button" value="生成！" onClick="btnClick(this)">
                 </li>
                 <li>
                     <input type="reset" name="bt01" value="入力内容を初期化">
@@ -222,13 +223,7 @@
 
         });
 
-        //一括送信
-        // function send() {
-
-
-        // };
-
-
+        //生成
         function btnClick(obj) {
             // alert(obj.value);
             _form.classList.add('form');
@@ -238,9 +233,7 @@
             if (_siteName.value === '') {
                 document.getElementById("siteNameG").innerHTML = '適当なサイト名';
             };
-        }
-        // !_sN.value || !_sN.value.match(/\S/g)
-
+        };
 
 
         //エンターキー誤送対策
@@ -248,8 +241,8 @@
             const key = e.keyCode || e.charCode || 0;
             if (key == 13) {
                 e.preventDefault();
-            }
-        }
+            };
+        };
 
     </script>
 </body>
