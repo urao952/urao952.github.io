@@ -5,17 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>簡素自動生成</title>
+    <link rel='stylesheet' href='https://unpkg.com/ress/dist/ress.min.css'>
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/ress/dist/ress.min.css">
     <style>
-        .generate {
+        /* .generate {
             display: none;
         }
 
         .form {
             display: none;
-        }
+        } */
 
         #form {
             text-align: center;
@@ -36,9 +35,9 @@
             top: 0;
         }
 
-        #main {
+        /* #main {
             height: 600px;
-        }
+        }*/
     </style>
 </head>
 
@@ -56,17 +55,17 @@
                 <div id="form_result" class="margin-m-s">フォーム結果</div>
             </div> -->
             <div id="marginG">
-                <p id="" class="pE1 margin-m-s">Lorem ipsum dolor sit amet, consectetur</p>
+                <p id="" class="pE1 margin-m-s">ヘッダー子要素</p>
             </div>
         </div>
         <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素
             <div id="marginG">
-                <div id="" class="mainE1 margin-m-s">Lorem ipsum dolor sit amet, consectetur</div>
+                <div id="" class="mainE1 margin-m-s">メイン子要素</div>
             </div>
         </div>
         <div id="footer" class="hmf-bc-r hmf-pa-s">フッター要素
             <div id="marginG">
-                <p id="" class="margin-m-s">Lorem ipsum dolor sit amet, consectetur</p>
+                <p id="" class="margin-m-s">フッター子要素</p>
             </div>
         </div>
     </div>
@@ -76,24 +75,29 @@
     <div class="input">
 
         <form id="form">
-            ＊「site name」が空白の場合、適当な言葉が入力されます。
+            <p class="red">＊「site name」が空白の場合、適当な言葉が入力されます。</p>
             <ul>
-
                 <li>
-                    <label for="color">site background color</label><br>
+                    <label for="selectBg" id="labels">background-color</label><a
+                        href="https://developer.mozilla.org/ja/docs/Web/CSS/background-color" id="questionLinks"
+                        target="_blank" rel="noopener noreferrer"></a><br>
                     <select id="selectBg" name="mainColor">
-                        <option value="red" selected>赤系</option>
-                        <option value="green">緑系</option>
-                        <option value="blue">青系</option>
+                        <option value="1" selected>赤系</option>
+                        <option value="2">緑系</option>
+                        <option value="3">青系</option>
                     </select>
                     <!-- 赤系＝コカ・コーラ、ホンダ、ポッキー -->
                 </li>
                 <li>
-                    <label for="mysite">site name(0~20)</label><br>
+                    <label for="siteName" id="labels">site-name(maxlength=20)</label><a
+                        href="https://www.dspt.net/bgn/002/003_name_and_logo_generator.html" id="questionLinks"
+                        target="_blank" rel="noopener noreferrer"></a><br>
                     <input id="siteName" type="text" maxlength="20" placeholder="サイト名を入力" name="siteName">
                 </li>
                 <li>
-                    <label for="margin">margin</label><br>
+                    <label for="selectMargin" id="labels">margin</label><a
+                        href="https://developer.mozilla.org/ja/docs/Web/CSS/margin" id="questionLinks" target="_blank"
+                        rel="noopener noreferrer"></a><br>
                     <select id="selectMargin" name="margin">
                         <option value="1">小さめ</option>
                         <option value="2">中くらい</option>
@@ -101,19 +105,24 @@
                     </select>
                 </li>
                 <li>
-                    <label for="">text-align</label><br>
+                    <label for="textAlign" id="labels">text-align</label><a
+                        href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
+                        target="_blank" rel="noopener noreferrer"></a><br>
                     <select id="textAlign" name="textAlign">
-                        <option value="">start</option>
-                        <option value="">right</option>
-                        <option value="">left</option>
-                        <option value="">center</option>
+                        <option value="1">start</option>
+                        <option value="2">right</option>
+                        <option value="3">left</option>
+                        <option value="4">center</option>
                     </select>
                 </li>
                 <li>
                     <div class="hidden_box">
-                        <label for="label1">＋ヘッダー部分</label>
+                        <label for="label1">＋ヘッダー追加</label>
                         <input type="checkbox" id="label1" />
                         <div class="hidden_show">
+                            <label for="checkSlide" id="labels">slideshow</label><a
+                                href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
+                                target="_blank" rel="noopener noreferrer"></a><br>
                             <select id="checkSlide" name="checkBox">
                                 <option value="1">スライド</option>
                                 <option value="2">フェードイン</option>
@@ -124,10 +133,13 @@
                 </li>
                 <li>
                     <div class="hidden_box">
-                        <label for="label2">＋メイン部分</label>
+                        <label for="label2">＋メイン追加</label>
                         <input type="checkbox" id="label2" />
                         <div class="hidden_show">
                             <form id="hidden">
+                                <label for="checkSide" id="labels">side menu</label><a
+                                    href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
+                                    target="_blank" rel="noopener noreferrer"></a><br>
                                 <select id="checkSide" name="checkBox">
                                     <input type="radio" name="s1" value="yes">はい
                                     <input type="radio" name="s1" value="no">いいえ
@@ -138,7 +150,7 @@
                 </li>
                 <li>
                     <div class="hidden_box">
-                        <label for="label3">＋フッター部分</label>
+                        <label for="label3">＋フッター追加</label>
                         <input type="checkbox" id="label3" />
                         <div class="hidden_show">
                         </div>
@@ -152,6 +164,11 @@
                 </li>
             </ul>
         </form>
+        <form id="form2">
+            <label for="doNotKnow">わかんないよモード</label>
+            <input id="doNotKnow" type="radio" name="w1" value="on">オン
+            <input id="doNotKnow" type="radio" name="w1" value="off" checked>オフ
+        </form>
     </div>
 
     <script>
@@ -159,12 +176,13 @@
         const _header = document.getElementById('header');
         const _main = document.getElementById('main');
         const _footer = document.getElementById('footer');
-        const _HMF = document.querySelectorAll("#header,#main,#footer")
+        const _HMF = document.querySelectorAll("#header,#main,#footer");
+
         //色
         const _selectBg = document.getElementById('selectBg');
         //サイト名
         const _siteName = document.getElementById('siteName');
-
+        //入力と生成
         const _form = document.getElementById('form');
         const _generate = document.getElementById('generate');
         //margin
@@ -172,22 +190,28 @@
         const _marginG = _generate.querySelectorAll("#marginG");
         // const _marginG2 = document.getElementById('marginG2');
 
+        ////わかんないよモード////
+        const _dontK = document.getElementById('doNotKnow');
+        const _label = document.getElementById("form2");
+        const _radioNodeList = _label.w1;
+        // const _onOff = _radioNodeList.value;
+        const _labelId = document.querySelectorAll("#labels");
+        const _QL = document.querySelectorAll("#questionLinks");
+        console.log(_QL);
+
         //色
         _selectBg.addEventListener("change", function () {
             let _color1 = _selectBg.value;
             for (let i = 0; i < _HMF.length; i++) {
                 let _elementC = _HMF[i];
-                if (_color1 === 'red') {
-                    _elementC.classList.remove('hmf-bc-g');
-                    _elementC.classList.remove('hmf-bc-b');
+                if (_color1 === '1') {
+                    _elementC.classList.remove('hmf-bc-g', 'hmf-bc-b');
                     _elementC.classList.add('hmf-bc-r');
-                } else if (_color1 === 'green') {
-                    _elementC.classList.remove('hmf-bc-r');
-                    _elementC.classList.remove('hmf-bc-b');
+                } else if (_color1 === '2') {
+                    _elementC.classList.remove('hmf-bc-r', 'hmf-bc-b');
                     _elementC.classList.add('hmf-bc-g');
-                } else if (_color1 === 'blue') {
-                    _elementC.classList.remove('hmf-bc-r');
-                    _elementC.classList.remove('hmf-bc-g');
+                } else if (_color1 === '3') {
+                    _elementC.classList.remove('hmf-bc-r', 'hmf-bc-g');
                     _elementC.classList.add('hmf-bc-b');
                 };
             };
@@ -225,7 +249,6 @@
 
         //生成
         function btnClick(obj) {
-            // alert(obj.value);
             _form.classList.add('form');
             _generate.classList.remove('generate');
             _generate.classList.add('generate-b');
@@ -234,6 +257,35 @@
                 document.getElementById("siteNameG").innerHTML = '適当なサイト名';
             };
         };
+        // !_sN.value || !_sN.value.match(/\S/g)
+
+        //ラベル変更
+        _label.addEventListener("change", function () {
+            for (let i = 0; i < _labelId.length; i++)
+                for (let i = 0; i < _QL.length; i++)
+                    if (_radioNodeList.value === "on") {
+                        //変更内容
+                        _QL[i].innerHTML = "【？】";
+                        _labelId[0].innerHTML = "背景色";
+                        _labelId[1].innerHTML = "サイトの名前(20字以内)";
+                        _labelId[2].innerHTML = "文字や画像の外側の余白";
+                        _labelId[3].innerHTML = "文字の水平方向の配置";
+                    } else if (_radioNodeList.value === "off") {
+                        _QL[i].innerHTML = "";
+                        _labelId[0].innerHTML = "background-color";
+                        _labelId[1].innerHTML = "site-name(maxlength=20)";
+                        _labelId[2].innerHTML = "margin";
+                        _labelId[3].innerHTML = "text-align";
+                    };
+        });
+
+        // <a href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align"></a>
+        //うまくできないのでurlは別貼りで
+        //?_???????????????????????????
+        //background-color　背景色
+        //site-name(20字以内)　サイトの名前(20字以内)
+        //margin　文字や画像の外側の余白
+        //text-align　
 
 
         //エンターキー誤送対策
