@@ -35,9 +35,9 @@
             top: 0;
         }
 
-        /* #main {
+        #main {
             height: 600px;
-        }*/
+        }
     </style>
 </head>
 
@@ -46,24 +46,31 @@
         <script src="ramdom1.js"></script>
     </div>
     <div id="generate" class="generate">
-        <div id="header" class="hmf-bc-r hmf-pa-s">ヘッダー要素
-
-            <div id="marginG">
+        <div id="header" class="hmf-bc-r hmf-pa-s">ヘッダー要素------------------------
+            <div class="h-flex">
                 <h1 id="siteNameG" class="margin-m-s marginG">見出し</h1>
+                <form id="formG1" action="file:///Users/s202038/Desktop/exhibition/index.html" method="get">
+                    <input id="sboxG1" name="search" type="text" placeholder="キーワードを入力" />
+                    <input id="sbtnG1" type="submit" value="検索" />
+                </form>
+                <a href="">パンくず>リスト</a>
             </div>
-            <!-- <div id="marginG">
-                <div id="form_result" class="margin-m-s">フォーム結果</div>
-            </div> -->
             <div id="marginG">
                 <p id="" class="pE1 margin-m-s">ヘッダー子要素</p>
             </div>
         </div>
-        <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素
+        <div id="main" class="hmf-bc-r hmf-pa-s">メイン要素------------------------
             <div id="marginG">
                 <div id="" class="mainE1 margin-m-s">メイン子要素</div>
             </div>
+            <div id="marginG">
+                <div id="" class="mainE1 margin-m-s">かたまり1</div>
+                <div id="" class="mainE1 margin-m-s">かたまり2</div>
+                <div id="" class="mainE1 margin-m-s">かたまり3</div>
+                <div id="" class="mainE1 margin-m-s">かたまり4</div>
+            </div>
         </div>
-        <div id="footer" class="hmf-bc-r hmf-pa-s">フッター要素
+        <div id="footer" class="hmf-bc-r hmf-pa-s">フッター要素------------------------
             <div id="marginG">
                 <p id="" class="margin-m-s">フッター子要素</p>
             </div>
@@ -121,8 +128,8 @@
                         <input type="checkbox" id="label1" />
                         <div class="hidden_show">
                             <label for="checkSlide" id="labels">slideshow</label><a
-                                href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
-                                target="_blank" rel="noopener noreferrer"></a><br>
+                                href="https://webukatu.com/wordpress/blog/7073/" id="questionLinks" target="_blank"
+                                rel="noopener noreferrer"></a><br>
                             <select id="checkSlide" name="checkBox">
                                 <option value="1">スライド</option>
                                 <option value="2">フェードイン</option>
@@ -137,13 +144,11 @@
                         <input type="checkbox" id="label2" />
                         <div class="hidden_show">
                             <form id="hidden">
-                                <label for="checkSide" id="labels">side menu</label><a
+                                <label for="checkSide" id="labels">side-menu</label><a
                                     href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
                                     target="_blank" rel="noopener noreferrer"></a><br>
-                                <select id="checkSide" name="checkBox">
-                                    <input type="radio" name="s1" value="yes">はい
-                                    <input type="radio" name="s1" value="no">いいえ
-                                </select>
+                                <input id="checkSide" type="radio" name="s1" value="yes" checked>あり
+                                <input id="checkSide" type="radio" name="s1" value="no">なし
                             </form>
                         </div>
                     </div>
@@ -197,7 +202,6 @@
         // const _onOff = _radioNodeList.value;
         const _labelId = document.querySelectorAll("#labels");
         const _QL = document.querySelectorAll("#questionLinks");
-        console.log(_QL);
 
         //色
         _selectBg.addEventListener("change", function () {
@@ -253,7 +257,7 @@
             _generate.classList.remove('generate');
             _generate.classList.add('generate-b');
             //サイト名０文字のときの処理
-            if (_siteName.value === '') {
+            if (!_siteName.value.match(/\S/g)) {
                 document.getElementById("siteNameG").innerHTML = '適当なサイト名';
             };
         };
@@ -270,25 +274,20 @@
                         _labelId[1].innerHTML = "サイトの名前(20字以内)";
                         _labelId[2].innerHTML = "文字や画像の外側の余白";
                         _labelId[3].innerHTML = "文字の水平方向の配置";
+                        _labelId[4].innerHTML = "画像のスライドショー";
+                        _labelId[5].innerHTML = "サイドメニュー";
                     } else if (_radioNodeList.value === "off") {
                         _QL[i].innerHTML = "";
                         _labelId[0].innerHTML = "background-color";
                         _labelId[1].innerHTML = "site-name(maxlength=20)";
                         _labelId[2].innerHTML = "margin";
                         _labelId[3].innerHTML = "text-align";
+                        _labelId[4].innerHTML = "slideshow";
+                        _labelId[5].innerHTML = "side-menu";
                     };
         });
 
-        // <a href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align"></a>
-        //うまくできないのでurlは別貼りで
-        //?_???????????????????????????
-        //background-color　背景色
-        //site-name(20字以内)　サイトの名前(20字以内)
-        //margin　文字や画像の外側の余白
-        //text-align　
-
-
-        //エンターキー誤送対策
+        //エンターキー誤爆対策
         document.getElementById("form").onkeypress = (e) => {
             const key = e.keyCode || e.charCode || 0;
             if (key == 13) {

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エラー</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        form {
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>エラー！！！！</h1>
+    <a href="https://ja.wikipedia.org/wiki/HTTP_404" target="_blank" rel="noopener noreferrer">404(not found)とは？</a>
+    <a href="https://urao952.github.io/"></a>
+    <form id="error">
+        <input type="radio" name="error1" value="a" checked>ここは404ページです。<br>
+        <input type="radio" name="error1" value="b">&#9756;正しいページに戻る。
+    </form>
+    <script>
+        const _error = document.getElementById('error');
+
+        _error.addEventListener("change", function () {
+            location.href = 'https://urao952.github.io/';
+        });
+    </script>
+</body>
+
+</html>
