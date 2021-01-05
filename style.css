@@ -25,6 +25,12 @@ form ul li{
     border: 1px solid #000;
 }
 
+form li{
+    margin: 10px;
+    width: auto;
+    text-align: center;
+}
+
 li{
     border: 1px dotted #2833bc;
 }
@@ -124,4 +130,8 @@ li{
     padding: 10px 0;
     height: auto;
     opacity: 1;
+}
+/* 生成header */
+.h-flex{
+    display: flex;
 }
