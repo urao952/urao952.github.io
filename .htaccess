@@ -2,5 +2,5 @@
 deny from all
 </Files>
 Options -Indexes
-ErrorDocument 400 404.html
+ErrorDocument 404 404.html
 order deny,allow
