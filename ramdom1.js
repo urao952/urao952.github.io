@@ -9,5 +9,5 @@ _ramdomS[4] = 'ご';
 
 var _noS = Math.floor(Math.random() * _ramdomS.length);
 
-// 表示する
+// 表示
 document.write(_ramdomS[_noS]);
