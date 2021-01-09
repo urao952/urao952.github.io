@@ -16,6 +16,15 @@ form ul li{
     text-align: center;
 }
 
+::placeholder {
+    color: #9c9c9c;
+    background-color: #f3f3f3;
+}
+
+a{
+    text-decoration: none;
+}
+
 .generateBtn{
     background-color: bisque;
     padding: 10px 5px;
@@ -33,16 +42,198 @@ form li{
 
 li{
     border: 1px dotted #2833bc;
+    padding: 10px;
 }
-
-.red{
-    color: brown;
+/*赤系*/
+.red1{
+    color: #e2041b;
 }
-
+.red2{
+    color: #e60033;
+}
+.red3{
+    color: #d7003a;
+}
+.red4{
+    color: #d3381c;
+}
+.red5{
+    color: #c53d43;
+}
+.red6{
+    color: #ce5242;
+}
+.red7{
+    color: #b94047;
+}
+.red8{
+    color: #b7282e;
+}
+.red9{
+    color: #a22041;
+}
+.red10{
+    color: #a73836;
+}
+.redBg1{
+    background-color: #e2041b;
+}
+.redBg2{
+    background-color: #e60033;
+}
+.redBg3{
+    background-color: #d7003a;
+}
+.redBg4{
+    background-color: #d3381c;
+}
+.redBg5{
+    background-color: #c53d43;
+}
+.redBg6{
+    background-color: #ce5242;
+}
+.redBg7{
+    background-color: #b94047;
+}
+.redBg8{
+    background-color: #b7282e;
+}
+.redBg9{
+    background-color: #a22041;
+}
+.redBg10{
+    background-color: #a73836;
+}
+/*緑系*/
+.green1{
+    color: #009b9f;
+}
+.green2{
+    color: #417038;
+}
+.green3{
+    color: #387d39;
+}
+.green4{
+    color: #006a6c;
+}
+.green5{
+    color: #009944;
+}
+.green6{
+    color: #00885a;
+}
+.green7{
+    color: #00533f;
+}
+.green8{
+    color: #54917f;
+}
+.green9{
+    color: #a5c9c1;
+}
+.green10{
+    color: #79c06e;
+}
+.greenBg1{
+    background-color: #009b9f;
+}
+.greenBg2{
+    background-color: #417038;
+}
+.greenBg3{
+    background-color: #387d39;
+}
+.greenBg4{
+    background-color: #006a6c;
+}
+.greenBg5{
+    background-color: #009944;
+}
+.greenBg6{
+    background-color: #00885a;
+}
+.greenBg7{
+    background-color: #00533f;
+}
+.greenBg8{
+    background-color: #54917f;
+}
+.greenBg9{
+    background-color: #a5c9c1;
+}
+.greenBg10{
+    background-color: #79c06e;
+}
+/*青系*/
+.blue1{
+    color: #4169e1;
+}
+.blue2{
+    color: #191970;
+}
+.blue3{
+    color: #0000cd;
+}
+.blue4{
+    color: #0000ff;
+}
+.blue5{
+    color: #00ffff;
+}
+.blue6{
+    color:  #00ced1;
+}
+.blue7{
+    color: #1e90ff;
+}
+.blue8{
+    color: #00bfff;
+}
+.blue9{
+    color: #4682b4;
+}
+.blue10{
+    color: #6495ed;
+}
+.blueBg1{
+    background-color: #4169e1;
+}
+.blueBg2{
+    background-color: #191970;
+}
+.blueBg3{
+    background-color: #0000cd;
+}
+.blueBg4{
+    background-color: #0000ff;
+}
+.blueBg5{
+    background-color: #00ffff;
+}
+.blueBg6{
+    background-color: #00ced1;
+}
+.blueBg7{
+    background-color: #1e90ff;
+}
+.blueBg8{
+    background-color: #00bfff;
+}
+.blueBg9{
+    background-color: #4682b4;
+}
+.blueBg10{
+    background-color: #6495ed;
+}
+/* button{
+    background-color: mediumaquamarine;
+} これいる？*/
 /*headermainfooterの背景色*/
 
 .hmf-bc-r{
-    background-color: #ac4926;
+    background-color: #bb5548;
 }
 
 .hmf-bc-g{
@@ -83,40 +274,35 @@ li{
     margin: 40px;
 }
 
+/*隠し選択↓〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜*/
 /*表示・非表示*/
 /*全体*/
 .hidden_box {
     margin: 2em 0;/*前後の余白*/
     padding: 0;
 }
-
 /*ボタン装飾*/
 .hidden_box > label {
-    padding: 15px;
+    padding: 10px;
     font-weight: bold;
     border: solid 2px black;
     cursor :pointer;
 }
-
 #hidden label{
     padding: 0;
 }
-
-/*ボタンホバー時*/
+/*ボタンホバー*/
 .hidden_box label:hover {
     background: #efefef;
 }
-
-/*チェックは見えなくする*/
+/*チェック不可視*/
 .hidden_box > input {
     display: none;
 }
-
 #checkSide > input{
     display: block;
 }
-
-/*中身を非表示にしておく*/
+/*中身非表示*/
 .hidden_box .hidden_show {
     height: 0;
     padding: 0;
@@ -124,14 +310,60 @@ li{
     opacity: 0;
     transition: 0.8s;
 }
-
-/*クリックで中身表示*/
+/*クリック表示*/
 .hidden_box input:checked ~ .hidden_show {
     padding: 10px 0;
     height: auto;
     opacity: 1;
 }
+/*隠し選択↑〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜*/
+
+
 /* 生成header */
 .h-flex{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+#siteNameG{
+    text-shadow: 1px 2px 3px #808080;
+}
+/* 生成main */
+.hover-a .hover{
+display: none;
+}
+.hover-a:hover .normal{
+display: none;
+}
+.hover-a:hover .hover{
+display: inline;
+}
+
+#sboxG1{
+    background-color: #c53d43;
+}
+
+.mainE1P{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.main-Under-B{
+    border-bottom: 1px dotted #f3f3f3;
+}
+
+.mainE1{
+    padding: 40px 40px 40px 40px;
+    background-color: #ec3b0a;
+    width: 40%;
+    position: relative;
+}
+
+.title-g{
+    position: absolute;
+    top: 5%;
+    left: 5%;
+}
+
+/* 生成footer */
