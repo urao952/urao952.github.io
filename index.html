@@ -20,15 +20,17 @@
             text-align: center;
         }
 
-        #generate {
+        /* #generate {
             color: aliceblue;
-        }
+        } ??????*/
 
         #ramdomJ {
             float: left;
             position: -webkit-sticky;
-            position: sticky;
-            top: 0;
+            position: fixed;
+            bottom: 10px;
+            left: 8px;
+            z-index: 10;
         }
 
         #header {
@@ -37,6 +39,7 @@
 
         #main {
             min-height: 600px;
+            display: flex;
         }
 
         .h-img-r {
@@ -49,11 +52,15 @@
         .h-img-g {
             background-image: url(https://picsum.photos/200/300?image=28);
             background-repeat: repeat;
+            background-size: cover;
+            background-position: 50%;
         }
 
         .h-img-b {
             background-image: url(https://picsum.photos/200/300?image=16);
             background-repeat: repeat;
+            background-size: cover;
+            background-position: 50%;
         }
 
         .normal {
@@ -69,7 +76,7 @@
         }
 
         .bread-g {
-            margin-right: 20.5px;
+            padding-right: 20.5px;
             display: inline;
             /* ↑文字だけで高さ、幅が決まる */
         }
@@ -77,116 +84,206 @@
         .heading {
             font-size: 22px;
             display: inline;
+            border-bottom: double 5px #000;
         }
 
         .m-text {
             display: inline;
+            padding-right: 50px;
         }
 
-        .hover {
+        .sHover {
             background-color: #dfdfdf;
         }
     </style>
 </head>
 
 <body>
-    <div id="ramdomJ" class="red1">
-        <script src="ramdom1.js"></script>
+    <div class="jissituheader">
+        <div id="ramdomJ" class="red4">
+            <!-- src="ramdom1.js" -->
+            <script>
+                // let _ramdomS = new Array();
+                // //文章設定
+                // _ramdomS[0] = 'id siteNameGだよ';
+                // _ramdomS[1] = 'formG1だよ';
+                // _ramdomS[2] = 'さ';
+                // _ramdomS[3] = 'よ';
+                // _ramdomS[4] = 'ご';
+                // // console.log(_ramdomS[1]);
+                // let _noS = Math.floor(Math.random() * _ramdomS.length);
+                // document.addEventListener("DOMContentLoaded", function () {
+                //     let _0 = document.getElementById("siteNameG");
+                //     for (let i = 0; i < _ramdomS.length; i++) {
+                //         _0.addEventListener("mouseover", function () {
+                //             console.log = (_ramdomS[3]);
+                //         }, false);
+                //     };
+                // }, false);
+
+                // // 表示する
+                // document.write('<img src="images/owl.png" alt="owl">' + _ramdomS[_noS]);
+
+                // window.addEventListener("keydown", function (event) {
+                //     let _key = event.key;
+                //     document.write('<img src="images/owl.png" alt="owl">' + _key);
+                //     console.log(_key);
+                // }, true);
+
+            </script>
+        </div>
     </div>
     <div id="generate" class="generate">
         <div id="header" class="hmf-bc-r hmf-pa-s h-img-r">
             <div class="h-flex">
                 <h1 id="siteNameG" class="margin-m-s marginG">見出し</h1>
-                <a class="hover-a" href="https://kagesai.net/search-form-design/" target="_blank"
-                    rel="noopener noreferrer">
-                    <form id="formG1">
-                        <span class="normal">
-                            <p class="form-g redBg4">キーワードを入力</p>
+                <div class="sHover-a marginG">
+
+                    <div id="formG1">
+                        <span class="normal RC RBC">
+                            <p class="form-g">キーワードを入力</p>
                             <p class="search-g">検索</p>
                         </span>
-                        <span class="hover">サイトの利便性が向上するもの&#8663;</span>
-
-                    </form>
+                        <a href="https://kagesai.net/search-form-design/" target="_blank" rel="noopener noreferrer">
+                            <span class="sHover">サイトの利便性が向上するもの&#8663;</span>
+                    </div>
+                    </a>
+                </div>
+            </div>
+            <div class="sHover-a marginG">
+                <span class="normal bread-g RC RBC">見せかけの > パンくず > リスト</span>
+                <a href="https://saruwakakun.com/html-css/basic/breadcrumb" target="_blank" rel="noopener noreferrer">
+                    <span class="sHover">自分のいる階層を視覚化したもの&#8663;</span>
                 </a>
             </div>
-
-            <a class="hover-a" href="https://saruwakakun.com/html-css/basic/breadcrumb" target="_blank"
-                rel="noopener noreferrer">
-                <span class="normal bread-g">見せかけの > パンくず > リスト</span>
-                <span class="hover">自分のいる階層を視覚化したもの&#8663;</span>
-            </a>
-            <div id="marginG">
-                <p id="" class="pE1 margin-m-s">ヘッダー子要素</p>
-            </div>
+            <!-- <div id="marginG RC RBC">
+                <p id="" class="pE1 margin-m-s">&#9759;左側の付いてくるやつは「Z」キーで文章固定、「X」キーで非表示にできます。</p>
+            </div> -->
         </div>
         <div id="main" class="hmf-bc-r hmf-pa-s">
-            <div id="marginG">
-                <div id="" class="margin-m-s">メイン子要素</div>
+            <div class="mainMenu">
+                <div id="marginG" class="mainE1P">
+                    <div id="" class="mainE1 margin-m-s">
+                        <div class="title-g">
+                            <div class="sHover-a">
+                                <span class="normal heading RC RBC">見出し1</span>
+                                <a href="https://saruwakakun.com/html-css/reference/h-design" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="sHover heading">記事を端的に要約した言葉&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-g">
+                            <div class="sHover-a">
+                                <span class="normal m-text abridgement RC">文章文章文章文章文章文</span>
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <span class="sHover m-text">同じ単語の羅列は悪い例&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="" class="mainE1 margin-m-s">
+                        <div class="title-g">
+                            <div class="sHover-a">
+                                <span class="normal heading RC RBC">見出し2</span>
+                                <a href="https://into-the-program.com/css-first-letter/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="sHover heading">一文字目を大きくしたり&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-g">
+                            <div class="sHover-a">
+                                <span class="normal m-text abridgement RC">文章文章文章文章文章文章</span>
+                                <a href="https://ja.wikipedia.org/wiki/Lorem_ipsum" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="sHover m-text">ダミーテキストを活用し&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="" class="mainE1 margin-m-s">
+                        <div class="title-g">
+                            <div class="sHover-a">
+                                <span class="normal heading RC RBC">見出し3</span>
+                                <a href="https://saruwakakun.com/html-css/reference/h-design" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="sHover heading">統一した装飾にして&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-g">
+                            <div class="sHover-a">
+                                <span class="normal m-text abridgement RC">文章文章文章文章文章文章</span>
+                                <a href="https://e-words.jp/w/%E3%83%80%E3%83%9F%E3%83%BC%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88.html"
+                                    target="_blank" rel="noopener noreferrer">
+                                    <span class="sHover m-text">実装時を想定した文章を&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="" class="mainE1 margin-m-s">
+                        <div class="title-g">
+                            <div class="sHover-a">
+                                <span class="normal heading RC RBC">見出し4</span>
+                                <a href="https://m-hands.net/marketing/1636/" target="_blank" rel="noopener noreferrer">
+                                    <span class="sHover heading">読者の目を引きましょう&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="text-g">
+                            <div class="sHover-a">
+                                <span class="normal m-text abridgement RC">文章文章文章文章文章</span>
+                                <a href="#" target="_blank" rel="noopener noreferrer">
+                                    <span class="sHover m-text">設置しておきましょう&#8663;</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-Under-B"></div>
             </div>
-            <div id="marginG" class="mainE1P">
-                <div id="" class="mainE1 margin-m-s">
-                    <div class="title-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal heading">見出し1</span>
-                            <span class="hover heading">記事を端的に要約した言葉</span>
+            <div id="sideMenu" class="">
+                <div class="ad">
+                    <div class="sHover-a">
+                        <a href="https://techacademy.jp/magazine/32138" target="_blank" rel="noopener noreferrer">
+                            <span class="normal"><img src="http://placehold.jp/bbbbbb/222222/150x200.png?text={サブメニュー}"
+                                    alt="広告"></span>
+                            <span class="sHover"><img
+                                    src="http://placehold.jp/dddddd/333333/150x200.png?text=様々な活用法があります"
+                                    alt="広告"></span>
                         </a>
                     </div>
-                    <div class="text-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal m-text">かたまり1</span>
-                            <span class="hover m-text">かたまり１＠1</span>
+                    <div class="sHover-a">
+                        <a href="https://art-trading.co.jp/column/ec-ad-web/" target="_blank" rel="noopener noreferrer">
+                            <span class="normal"><img src="http://placehold.jp/bbbbbb/222222/150x200.png?text={広告}"
+                                    alt="広告"></span>
+                            <span class="sHover"><img
+                                    src="http://placehold.jp/dddddd/333333/150x200.png?text=広告スペースとして使ったり"
+                                    alt="広告"></span>
                         </a>
                     </div>
-                </div>
-                <div id="" class="mainE1 margin-m-s">
-                    <div class="title-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal heading">見出し2</span>
-                            <span class="hover heading">記事を端的に要約した言葉</span>
-                        </a>
-                    </div>
-                    <div class="text-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal m-text">かたまり2</span>
-                            <span class="hover m-text">かたまり2＠2</span>
-                        </a>
-                    </div>
-                </div>
-                <div id="" class="mainE1 margin-m-s">
-                    <div class="title-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal heading">見出し3</span>
-                            <span class="hover heading">記事を端的に要約した言葉</span>
-                        </a>
-                    </div>
-                    <div class="text-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal m-text">かたまり3</span>
-                            <span class="hover m-text">かたまり3＠3</span>
-                        </a>
-                    </div>
-                </div>
-                <div id="" class="mainE1 margin-m-s">
-                    <div class="title-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal heading">見出し4</span>
-                            <span class="hover heading">記事を端的に要約した言葉</span>
-                        </a>
-                    </div>
-                    <div class="text-g">
-                        <a class="hover-a" href="#" target="_blank" rel="noopener noreferrer"><span
-                                class="normal m-text">かたまり4</span>
-                            <span class="hover m-text">かたまり4＠4</span>
+                    <div class="sHover-a">
+                        <a href="https://innova-jp.com/3605" target="_blank" rel="noopener noreferrer">
+                            <span class="normal"><img src="http://placehold.jp/bbbbbb/222222/150x200.png?text={お問い合わせ}"
+                                    alt="お問い合わせ"></span>
+                            <span class="sHover"><img
+                                    src="http://placehold.jp/dddddd/333333/150x200.png?text=コンバージョンへの導線も用意できます"
+                                    alt="広告"></span>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="main-Under-B"></div>
-
         </div>
         <div id="footer" class="hmf-bc-r hmf-pa-s">
             <div id="marginG">
-                <p id="" class="margin-m-s">©urao</p>
+                <div class="sHover-a">
+                    <span class="normal RC">　©2020 urao All Rights Resarved.</span>
+                    <a href="https://kaikoku.blam.co.jp/client/digimaguild/knowledge/affiliate/1521" target="_blank"
+                        rel="noopener noreferrer">
+                        <span class="sHover margin-m-s">著作者や著作年の表記により、著作権を持っていることを示すもの</span>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -194,9 +291,10 @@
 
     <!-- フォーム~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
     <div class="input">
-
         <form id="form">
-            <p class="red">＊「site name」が空白の場合、適当な言葉が入力されます。</p>
+            <p class="red1">＊「site name」が空白の場合、適当な言葉が入力されます。</p>
+            <!-- <p class="red2">&#9759;左側の付いてくるやつは「Z」キーで文章固定、「X」キーで非表示にできます。</p> -->
+
             <ul>
                 <li>
                     <label for="selectBg" id="labels">background-color</label><a
@@ -207,7 +305,6 @@
                         <option value="2">緑系</option>
                         <option value="3">青系</option>
                     </select>
-                    <!-- 赤系＝コカ・コーラ、ホンダ、ポッキー -->
                 </li>
                 <li>
                     <label for="siteName" id="labels">site-name(maxlength=20)</label><a
@@ -225,7 +322,7 @@
                         <option value="3">大きめ</option>
                     </select>
                 </li>
-                <li>
+                <!-- <li>
                     <label for="textAlign" id="labels">text-align</label><a
                         href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
                         target="_blank" rel="noopener noreferrer"></a><br>
@@ -235,7 +332,7 @@
                         <option value="3">left</option>
                         <option value="4">center</option>
                     </select>
-                </li>
+                </li> -->
                 <li>
                     <div class="hidden_box">
                         <label for="label1">＋ヘッダー追加</label>
@@ -244,39 +341,34 @@
                             <label for="checkSlide" id="labels">slideshow</label><a
                                 href="https://webukatu.com/wordpress/blog/7073/" id="questionLinks" target="_blank"
                                 rel="noopener noreferrer"></a><br>
-                            <select id="checkSlide" name="checkBox">
+                            <!-- <select id="checkSlide" name="checkBox">
                                 <option value="1">スライド</option>
                                 <option value="2">フェードイン</option>
                                 <option value="3">ユニーク</option>
-                            </select>
+                            </select> -->
+                            <input id="checkSlide" type="radio" name="sl1" value="yes" disabled>あり
+                            <input id="checkSlide" type="radio" name="sl1" value="no">なし
                         </div>
                     </div>
                 </li>
                 <li>
-                    <div class="hidden_box">
-                        <label for="label2">＋メイン追加</label>
-                        <input type="checkbox" id="label2" />
-                        <div class="hidden_show">
-                            <form id="hidden">
-                                <label for="checkSide" id="labels">side-menu</label><a
-                                    href="https://developer.mozilla.org/ja/docs/Web/CSS/text-align" id="questionLinks"
-                                    target="_blank" rel="noopener noreferrer"></a><br>
-                                <input id="checkSide" type="radio" name="s1" value="yes" checked>あり
-                                <input id="checkSide" type="radio" name="s1" value="no">なし
-                            </form>
-                        </div>
-                    </div>
+                    <label for="checkSide" id="labels">side-menu</label><a
+                        href="https://taishon.nagoya/sidebar-why-right/" id="questionLinks" target="_blank"
+                        rel="noopener noreferrer"></a><br>
+                    <input id="checkSide" type="radio" name="s1" value="yes" checked>あり
+                    <input id="checkSide" type="radio" name="s1" value="no">なし
                 </li>
-                <li>
+
+                <!-- <li>
                     <div class="hidden_box">
                         <label for="label3">＋フッター追加</label>
                         <input type="checkbox" id="label3" />
                         <div class="hidden_show">
                         </div>
                     </div>
-                </li>
+                </li> -->
                 <li>
-                    <input class="generateBtn" type="button" value="生成！" onClick="btnClick(this)">
+                    <input class="generateBtn" type="button" value="生成！" onClick="btnClick()">
                 </li>
                 <li>
                     <input type="reset" name="bt01" value="入力内容を初期化">
@@ -296,8 +388,12 @@
         const _main = document.getElementById('main');
         const _footer = document.getElementById('footer');
         const _HMF = document.querySelectorAll("#header,#main,#footer");
-        //色
+        //背景色選択
         const _selectBg = document.getElementById('selectBg');
+        //色
+        const _mainEColor = document.getElementsByClassName('mainE1');
+        const _ramdomColor = document.getElementsByClassName('RC');
+        const _ramdomBgColor = document.getElementsByClassName('RBC');
         //サイト名
         const _siteName = document.getElementById('siteName');
         //入力と生成
@@ -305,8 +401,15 @@
         const _generate = document.getElementById('generate');
         //margin
         const _selectMargin = document.getElementById('selectMargin');
-        const _marginG = _generate.querySelectorAll("#marginG");
+        const _marginG = _generate.querySelectorAll("#marginG, .marginG");
         // const _marginG2 = document.getElementById('marginG2');
+        //スライドショー
+        const _SLIDE = document.getElementById('checkSlide');
+        // const _slideNodeList = _form.sl1;
+        //サイドメニュー
+        const _SIDE = document.getElementById('checkSide');
+        const _sideNodeList = _form.s1;
+        const _sideNone = document.getElementById('sideMenu');
         ////わかんないよモード////
         const _dontK = document.getElementById('doNotKnow');
         const _label = document.getElementById("form2");
@@ -314,7 +417,18 @@
         const _labelId = document.querySelectorAll("#labels");
         const _QL = document.querySelectorAll("#questionLinks");
 
-        //色
+        //乱数
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min) + min);
+            //最小値以上、最大値未満
+        }
+        function GetRandomNumber() {
+            return 1 + Math.floor(Math.random() * 10);
+        }
+
+        //色とヘッダー
         _selectBg.addEventListener("change", function () {
             let _color1 = _selectBg.value;
             for (let i = 0; i < _HMF.length; i++) {
@@ -322,12 +436,18 @@
                 if (_color1 === '1') {
                     _elementC.classList.remove('hmf-bc-g', 'hmf-bc-b');
                     _elementC.classList.add('hmf-bc-r');
+                    _header.classList.remove('h-img-g', 'h-img-b');
+                    _header.classList.add('h-img-r');
                 } else if (_color1 === '2') {
                     _elementC.classList.remove('hmf-bc-r', 'hmf-bc-b');
                     _elementC.classList.add('hmf-bc-g');
+                    _header.classList.remove('h-img-r', 'h-img-b');
+                    _header.classList.add('h-img-g');
                 } else if (_color1 === '3') {
                     _elementC.classList.remove('hmf-bc-r', 'hmf-bc-g');
                     _elementC.classList.add('hmf-bc-b');
+                    _header.classList.remove('h-img-r', 'h-img-g');
+                    _header.classList.add('h-img-b');
                 };
             };
         });
@@ -338,32 +458,43 @@
             document.getElementById("siteNameG").innerHTML = _sN;
         });
 
-
-
         //マージン
         _selectMargin.addEventListener("change", function () {
             let _sMV = _selectMargin.value;
             for (let i = 0; i < _marginG.length; i++) {
                 let _elementM = _marginG[i];
                 if (_sMV === '1') {
-                    _elementM.classList.remove('margin-m-b');
-                    _elementM.classList.remove('margin-m-m');
+                    _elementM.classList.remove('margin-m-b', 'margin-m-m');
                     _elementM.classList.add('margin-m-s');
                 } else if (_sMV === '2') {
-                    _elementM.classList.remove('margin-m-b');
-                    _elementM.classList.remove('margin-m-s');
+                    _elementM.classList.remove('margin-m-b', 'margin-m-s');
                     _elementM.classList.add('margin-m-m');
                 } else if (_sMV === '3') {
-                    _elementM.classList.remove('margin-m-m');
-                    _elementM.classList.remove('margin-m-s');
+                    _elementM.classList.remove('margin-m-m', 'margin-m-s');
                     _elementM.classList.add('margin-m-b');
                 };
             }
+        });
 
+        //スライドショー
+        // _SLIDE.addEventListener("change", function () {
+        //     if (_slideNodeList.value === "yes") {
+        //     } else if (_slideNodeList.value === "no") {
+        //     };
+        // });
+
+        //サイドメニュー
+        _form.addEventListener("change", function () {
+            let _sideValue = _sideNodeList.value;
+            if (_sideValue === "yes") {
+                _sideNone.classList.remove('sidemenu-none');
+            } else if (_sideValue === "no") {
+                _sideNone.classList.add('sidemenu-none');
+            };
         });
 
         //生成
-        function btnClick(obj) {
+        function btnClick() {
             _form.classList.add('form');
             _generate.classList.remove('generate');
             _generate.classList.add('generate-b');
@@ -371,44 +502,29 @@
             if (!_siteName.value.match(/\S/g)) {
                 document.getElementById("siteNameG").innerHTML = '適当なサイト名';
             };
+            console.log(GetRandomNumber());
         };
-        // !_sN.value || !_sN.value.match(/\S/g)
 
-        //ラベル変更
+        //ラベル変更(don't-know-mode
         _label.addEventListener("change", function () {
             for (let i = 0; i < _labelId.length; i++)
                 for (let i = 0; i < _QL.length; i++)
                     if (_radioNodeList.value === "on") {
-                        //変更内容
                         _QL[i].innerHTML = "【？】";
                         _labelId[0].innerHTML = "背景色";
                         _labelId[1].innerHTML = "サイトの名前(20字以内)";
                         _labelId[2].innerHTML = "文字や画像の外側の余白";
-                        _labelId[3].innerHTML = "文字の水平方向の配置";
-                        _labelId[4].innerHTML = "画像のスライドショー";
-                        _labelId[5].innerHTML = "サイドメニュー";
+                        _labelId[3].innerHTML = "画像のスライドショー";
+                        _labelId[4].innerHTML = "サイドメニュー";
                     } else if (_radioNodeList.value === "off") {
                         _QL[i].innerHTML = "";
                         _labelId[0].innerHTML = "background-color";
                         _labelId[1].innerHTML = "site-name(maxlength=20)";
                         _labelId[2].innerHTML = "margin";
-                        _labelId[3].innerHTML = "text-align";
-                        _labelId[4].innerHTML = "slideshow";
-                        _labelId[5].innerHTML = "side-menu";
+                        _labelId[3].innerHTML = "slideshow";
+                        _labelId[4].innerHTML = "side-menu";
                     };
         });
-
-        //マウスオーバー
-        for (i = 1; i <= 3; i++) {
-            var _mouseOver = document.getElementById("div" + i);
-            _mouseOver.addEventListener("mouseover", function (event) {
-                event.target.style.backgroundColor = "orange";
-                setTimeout(function () {
-                    event.target.style.backgroundColor = "";
-                }, 500);
-            }, false);
-        }
-
         //エンターキー誤爆対策
         document.getElementById("form").onkeypress = (e) => {
             const key = e.keyCode || e.charCode || 0;

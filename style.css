@@ -4,12 +4,19 @@ body{
     margin: 0;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
 body .sitename{
     font-size: 30px;
 }
 
 form ul li{
     list-style: none;
+    min-height: 100px;
 }
 
 .input{
@@ -233,15 +240,15 @@ li{
 /*headermainfooterの背景色*/
 
 .hmf-bc-r{
-    background-color: #bb5548;
+    background-color: #f6bfbc;
 }
 
 .hmf-bc-g{
-    background-color: #26cc41;
+    background-color: #d6e9ca;
 }
 
 .hmf-bc-b{
-    background-color: #2833bc;
+    background-color: #c1e4e9;
 }
 
 /*headermainfooterのパディング*/
@@ -267,11 +274,11 @@ li{
 }
 
 .margin-m-m{
-    margin: 30px;
+    margin: 20px;
 }
 
 .margin-m-b{
-    margin: 40px;
+    margin: 25px;
 }
 
 /*隠し選択↓〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜*/
@@ -329,14 +336,19 @@ li{
 #siteNameG{
     text-shadow: 1px 2px 3px #808080;
 }
+
+.pE1{
+    color: #363636;
+    text-shadow: 1px 2px 3px #cacaca;
+}
 /* 生成main */
-.hover-a .hover{
+.sHover-a .sHover{
 display: none;
 }
-.hover-a:hover .normal{
+.sHover-a:hover .normal{
 display: none;
 }
-.hover-a:hover .hover{
+.sHover-a:hover .sHover{
 display: inline;
 }
 
@@ -350,12 +362,12 @@ display: inline;
 }
 
 .main-Under-B{
-    border-bottom: 1px dotted #f3f3f3;
+    border-bottom: 5px dotted #f3f3f3;
 }
 
 .mainE1{
-    padding: 40px 40px 40px 40px;
-    background-color: #ec3b0a;
+    padding: 70px 40px;
+    background-color: #ddd;
     width: 40%;
     position: relative;
 }
@@ -364,6 +376,15 @@ display: inline;
     position: absolute;
     top: 5%;
     left: 5%;
+}
+
+.sidemenu-none{
+    display: none;
+}
+
+/*テキスト省略*/
+.abridgement{
+    white-space: nowrap;
 }
 
 /* 生成footer */
