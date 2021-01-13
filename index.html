@@ -16,6 +16,10 @@
             display: none;
         }
 
+        .form2 {
+            display: none;
+        }
+
         #form {
             text-align: center;
         }
@@ -354,6 +358,7 @@
         const _siteName = document.getElementById('siteName');
         //入力と生成
         const _form = document.getElementById('form');
+        const _form2 = document.getElementById('form2');
         const _generate = document.getElementById('generate');
         //margin
         const _selectMargin = document.getElementById('selectMargin');
@@ -452,6 +457,7 @@
         //生成
         function btnClick() {
             _form.classList.add('form');
+            _form2.classList.add('form2');
             _generate.classList.remove('generate');
             _generate.classList.add('generate-b');
             //サイト名０文字のときの処理
