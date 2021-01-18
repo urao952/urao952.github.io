@@ -33,9 +33,6 @@
                     <span class="sHover">自分のいる階層を視覚化したもの&#8663;</span>
                 </a>
             </div>
-            <!-- <div id="marginG RC RBC">
-                <p id="" class="pE1 margin-m-s">&#9759;左側の付いてくるやつは「Z」キーで文章固定、「X」キーで非表示にできます。</p>
-            </div> -->
         </div>
         <div id="main" class="hmf-bc-r hmf-pa-s">
             <div class="mainMenu">
@@ -245,8 +242,6 @@
     <div class="input">
         <form id="form">
             <p class="red1">＊「site name」が空白の場合、代わりの言葉が入力されます。</p>
-            <!-- <p class="red2">&#9759;左側の付いてくるやつは「Z」キーで文章固定、「X」キーで非表示にできます。</p> -->
-
             <ul>
                 <li>
                     <label for="selectBg" id="labels">background-color</label><a
@@ -326,10 +321,8 @@
         //margin
         const _selectMargin = document.getElementById('selectMargin');
         const _marginG = _generate.querySelectorAll(".marginG");
-        // const _marginG2 = document.getElementById('marginG2');
         //スライドショー
         const _SLIDE = document.getElementById('checkSlide');
-        // const _slideNodeList = _form.sl1;
         //サイドメニュー
         const _SIDE = document.getElementById('checkSide');
         const _sideNodeList = _form.s1;
@@ -492,57 +485,9 @@
             for (let i = 0; i < _PEC7.length; i++) {
                 _PEC7[i].classList.add(_colorBranch + 'Bg' + _random7);
             }
-
-            // for (let i = 1; i < _PECtmp; i++) {
-            // _PEC = _PECtmp[i];
-
-            // if (_PEC[1].classList.contains('RC1') == true) {
-            //     _PEC[1].classList.add(_colorBranch + _random1);
-            // } else if (_PEC[2].classList.contains('RC2') == true) {
-            //     _PEC[2].classList.add(_colorBranch + _random2);
-            // } else if (_PEC.classList.contains('RC3') == true) {
-            //     _PEC.classList.add(_colorBranch + _random3);
-            // } else if (_PEC.classList.contains('RC4') == true) {
-            //     _PEC.classList.add(_colorBranch + _random4);
-            // } else if (_PEC.classList.contains('RC5') == true) {
-            //     _PEC.classList.add(_colorBranch + _random5);
-            // } else if (_PEC.classList.contains('RC6') == true) {
-            //     _PEC.classList.add(_colorBranch + _random6);
-            // } else if (_PEC.classList.contains('RC7') == true) {
-            //     _PEC.classList.add(_colorBranch + _random7);
-            // } else if (_PEC.classList.contains('RC8') == true) {
-            //     _PEC.classList.add(_colorBranch + _random8);
-            // } else if (_PEC.classList.contains('RC9') == true) {
-            //     _PEC.classList.add(_colorBranch + _random9);
-            // } else if (_PEC.classList.contains('RC10') == true) {
-            //     _PEC.classList.add(_colorBranch + _random10);
-            // };
-            // if (_PEC.classList.contains('RBC1') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random1);
-            // } else if (_PEC.classList.contains('RBC2') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random2);
-            // } else if (_PEC.classList.contains('RBC3') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random3);
-            // } else if (_PEC.classList.contains('RBC4') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random4);
-            // } else if (_PEC.classList.contains('RBC5') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random5);
-            // } else if (_PEC.classList.contains('RBC6') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random6);
-            // } else if (_PEC.classList.contains('RBC7') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random7);
-            // } else if (_PEC.classList.contains('RBC8') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random8);
-            // } else if (_PEC.classList.contains('RBC9') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random9);
-            // } else if (_PEC.classList.contains('RBC10') == true) {
-            //     _PEC.classList.add(_colorBranch + 'Bg' + _random10);
-            // };
-            // };
-
         };
 
-        //ラベル変更(don't-know-mode
+        //ラベル変更(わかんないよモード
         _label.addEventListener("change", function () {
             for (let i = 0; i < _labelId.length; i++)
                 for (let i = 0; i < _QL.length; i++)
@@ -592,7 +537,7 @@
                 _PTBack.classList.add('blueBg1');
             };
             let _offsetY = window.pageYOffset;
-            if (_offsetY > 375) {
+            if (_offsetY > 275) {
                 _btn.style.display = "flex";
             } else {
                 _btn.style.display = "none";
