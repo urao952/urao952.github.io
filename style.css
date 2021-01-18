@@ -14,6 +14,55 @@ body .sitename{
     font-size: 30px;
 }
 
+.generate {
+    display: none;
+}
+
+.pagetop {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#ramdomJ {
+    float: left;
+    position: -webkit-sticky;
+    position: fixed;
+    bottom: 10px;
+    left: 8px;
+    z-index: 10;
+}
+
+#header {
+    height: 240px;
+}
+
+#main {
+    min-height: 600px;
+    display: flex;
+}
+
+.form {
+    display: none;
+}
+
+.form2 {
+    display: none;
+}
+
+#form {
+    text-align: center;
+}
+
 form ul li{
     list-style: none;
     min-height: 100px;
@@ -281,56 +330,32 @@ li{
     margin: 25px;
 }
 
-/*隠し選択↓〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜*/
-/*表示・非表示*/
-/*全体*/
-.hidden_box {
-    margin: 2em 0;/*前後の余白*/
-    padding: 0;
-}
-/*ボタン装飾*/
-.hidden_box > label {
-    padding: 10px;
-    font-weight: bold;
-    border: solid 2px black;
-    cursor :pointer;
-}
-#hidden label{
-    padding: 0;
-}
-/*ボタンホバー*/
-.hidden_box label:hover {
-    background: #efefef;
-}
-/*チェック不可視*/
-.hidden_box > input {
-    display: none;
-}
-#checkSide > input{
-    display: block;
-}
-/*中身非表示*/
-.hidden_box .hidden_show {
-    height: 0;
-    padding: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: 0.8s;
-}
-/*クリック表示*/
-.hidden_box input:checked ~ .hidden_show {
-    padding: 10px 0;
-    height: auto;
-    opacity: 1;
-}
-/*隠し選択↑〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜〜*/
-
-
 /* 生成header */
 .h-flex{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.h-img-r {
+    background-image: url(https://picsum.photos/200/300?image=25);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.h-img-g {
+    background-image: url(https://picsum.photos/200/300?image=28);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.h-img-b {
+    background-image: url(https://picsum.photos/200/300?image=16);
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: 50%;
 }
 
 #siteNameG{
@@ -367,12 +392,11 @@ display: inline;
 
 .mainE1{
     padding: 70px 40px;
-    background-color: #ddd;
     width: 40%;
     position: relative;
 }
 
-.title-g{
+.heading-g{
     position: absolute;
     top: 5%;
     left: 5%;
@@ -380,6 +404,34 @@ display: inline;
 
 .sidemenu-none{
     display: none;
+}
+
+.normal {
+    display: flex;
+}
+
+.form-g {
+    padding-right: 73px;
+}
+
+.bread-g {
+    padding-right: 20.5px;
+    display: inline;
+}
+
+.heading-deco {
+    font-size: 22px;
+    display: inline;
+    border-bottom: double 5px #000;
+}
+
+.m-text {
+    display: inline;
+    padding-right: 50px;
+}
+
+.sHover {
+    background-color: #dfdfdf;
 }
 
 /*テキスト省略*/
