@@ -20,6 +20,7 @@ body .sitename{
 
 .pagetop {
     position: fixed;
+    transition: 2.0s;
     right: 30px;
     bottom: 30px;
     width: 50px;
@@ -99,6 +100,31 @@ form li{
 li{
     border: 1px dotted #2833bc;
     padding: 10px;
+}
+
+#stalker {
+    pointer-events: none;
+    position: fixed;
+    top: 8px;
+    left: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    transition: transform 0.2s, top, 0.5s, left 0.5s, width .5s, height .5s, background-color .5s;
+    transition-timing-function: ease-out;
+    z-index: 999;
+}
+
+#stalker.hov_{
+    top: -18px;
+    left: -20px;
+    width: 64px;
+    height: 64px;
+    transition: .5s;
+}
+
+.stalker{
+    display: none;
 }
 /*赤系*/
 .red1{
@@ -283,9 +309,6 @@ li{
 .blueBg10{
     background-color: #6495ed;
 }
-/* button{
-    background-color: mediumaquamarine;
-} これいる？*/
 /*headermainfooterの背景色*/
 
 .hmf-bc-r{
@@ -359,7 +382,7 @@ li{
 }
 
 #siteNameG{
-    text-shadow: 1px 2px 3px #808080;
+    text-shadow: 2px 2px 2px #dcdcdc;
 }
 
 .pE1{
@@ -402,7 +425,7 @@ display: inline;
     left: 5%;
 }
 
-.sidemenu-none{
+.classNone{
     display: none;
 }
 
@@ -412,6 +435,10 @@ display: inline;
 
 .form-g {
     padding-right: 73px;
+}
+
+.h1-g{
+    padding-right: 220px;
 }
 
 .bread-g {
