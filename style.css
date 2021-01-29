@@ -315,12 +315,31 @@ li{
     background-color: #f6bfbc;
 }
 
+.hmf-bgc-r{
+    background: -moz-linear-gradient(to bottom,#f6bfbc,#ca4343 40%,#f6bfbc);
+    background: -webkit-linear-gradient(to bottom,#f6bfbc,#ca4343 40%,#f6bfbc);
+    background: linear-gradient(to bottom,#f6bfbc,#ca4343 40%,#f6bfbc);
+}
+
+
 .hmf-bc-g{
     background-color: #d6e9ca;
 }
 
+.hmf-bgc-g{
+    background: -moz-linear-gradient(to bottom,#d6e9ca,#5cac2b 40%,#d6e9ca);
+    background: -webkit-linear-gradient(to bottom,#d6e9ca,#5cac2b 40%,#d6e9ca);
+    background: linear-gradient(to bottom,#d6e9ca,#5cac2b 40%,#d6e9ca);
+}
+
 .hmf-bc-b{
     background-color: #c1e4e9;
+}
+
+.hmf-bgc-b{
+    background: -moz-linear-gradient(to bottom,#c1e4e9,#34909c 40%,#c1e4e9);
+    background: -webkit-linear-gradient(to bottom,#c1e4e9,#34909c 40%,#c1e4e9);
+    background: linear-gradient(to bottom,#c1e4e9,#34909c 40%,#c1e4e9);
 }
 
 /*headermainfooterのパディング*/
@@ -416,6 +435,7 @@ display: inline;
 .mainE1{
     padding: 70px 40px;
     width: 40%;
+    border-radius: 5px 30px;
     position: relative;
 }
 
@@ -437,18 +457,29 @@ display: inline;
     padding-right: 73px;
 }
 
+.form-deco{
+    border-radius: 10px 0px 0px 10px;
+}
+
+.search-g{
+    padding: 3px;
+}
+
 .h1-g{
     padding-right: 220px;
 }
 
 .bread-g {
-    padding-right: 20.5px;
+    padding: 5px 20.5px 5px 5px;
+    border-radius: 10px 20px 20px 10px;
     display: inline;
 }
 
 .heading-deco {
     font-size: 22px;
     display: inline;
+    padding: 5px;
+    border-radius: 10px 5px;
     border-bottom: double 5px #000;
 }
 
@@ -467,3 +498,8 @@ display: inline;
 }
 
 /* 生成footer */
+.footer-deco{
+    border-radius: 240px 15px 100px 15px / 15px 200px 15px 185px;
+    padding: 20px;
+    border: 6px solid #eee;
+}
